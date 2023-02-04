@@ -73,64 +73,64 @@ public class TicTacToeViewer extends JFrame{
                 g.drawString("ITS A TIE!", x - (BOARD_WIDTH / 6), y);
             }
 
-            // The winning squares should be filled in green
-            g.setColor(Color.GREEN);
-            if(t.DIAGONAL_RIGHT_WIN == -1)
-            {
-                for(int i = 0; i < 3; i++)
-                {
-                    g.fillRect(x1 + (dimension * i), y1 + (dimension * i), dimension, dimension);
-                }
-            }
-            else if(t.DIAGONAL_LEFT_WIN == -1)
-            {
-                g.fillRect(x1 += (dimension * 2), y1, dimension, dimension);
-                g.fillRect(x1 -= dimension, y1 += dimension, dimension, dimension);
-                g.fillRect(x1 -= dimension, y1 += dimension, dimension, dimension);
-            }
-            else if(t.ROW_WIN == 0)
-            {
-                for(int i = 0; i < 3; i++)
-                {
-                    g.fillRect(x1 + (dimension * i), y1, dimension, dimension);
-                }
-            }
-            else if(t.ROW_WIN == 1)
-            {
-                for(int i = 0; i < 3; i++)
-                {
-                    g.fillRect(x1 + (dimension * i), y1 + dimension, dimension, dimension);
-                }
-            }
-            else if (t.ROW_WIN == 2)
-            {
-                for(int i = 0; i < 3; i++)
-                {
-                    g.fillRect(x1 + (dimension * i), y1 + (dimension * 2), dimension, dimension);
-                }
-            }
-            // Do the same for the columns
-            else if (t.COL_WIN == 0)
-            {
-                for(int i = 0; i < 3; i++)
-                {
-                    g.fillRect(x1, y1 + (dimension * i), dimension, dimension);
-                }
-            }
-            else if (t.COL_WIN == 1)
-            {
-                for(int i = 0; i < 3; i++)
-                {
-                    g.fillRect(x1 + dimension, y1 + (dimension * i), dimension, dimension);
-                }
-            }
-            else if (t.COL_WIN == 2)
-            {
-                for(int i = 0; i < 3; i++)
-                {
-                    g.fillRect(x1 + (dimension * 2), y1 + (dimension * i), dimension, dimension);
-                }
-            }
+//            // The winning squares should be filled in green
+//            g.setColor(Color.GREEN);
+//            if(t.DIAGONAL_RIGHT_WIN == -1)
+//            {
+//                for(int i = 0; i < 3; i++)
+//                {
+//                    g.fillRect(x1 + (dimension * i), y1 + (dimension * i), dimension, dimension);
+//                }
+//            }
+//            else if(t.DIAGONAL_LEFT_WIN == -1)
+//            {
+//                g.fillRect(x1 += (dimension * 2), y1, dimension, dimension);
+//                g.fillRect(x1 -= dimension, y1 += dimension, dimension, dimension);
+//                g.fillRect(x1 -= dimension, y1 += dimension, dimension, dimension);
+//            }
+//            else if(t.ROW_WIN == 0)
+//            {
+//                for(int i = 0; i < 3; i++)
+//                {
+//                    g.fillRect(x1 + (dimension * i), y1, dimension, dimension);
+//                }
+//            }
+//            else if(t.ROW_WIN == 1)
+//            {
+//                for(int i = 0; i < 3; i++)
+//                {
+//                    g.fillRect(x1 + (dimension * i), y1 + dimension, dimension, dimension);
+//                }
+//            }
+//            else if (t.ROW_WIN == 2)
+//            {
+//                for(int i = 0; i < 3; i++)
+//                {
+//                    g.fillRect(x1 + (dimension * i), y1 + (dimension * 2), dimension, dimension);
+//                }
+//            }
+//            // Do the same for the columns
+//            else if (t.COL_WIN == 0)
+//            {
+//                for(int i = 0; i < 3; i++)
+//                {
+//                    g.fillRect(x1, y1 + (dimension * i), dimension, dimension);
+//                }
+//            }
+//            else if (t.COL_WIN == 1)
+//            {
+//                for(int i = 0; i < 3; i++)
+//                {
+//                    g.fillRect(x1 + dimension, y1 + (dimension * i), dimension, dimension);
+//                }
+//            }
+//            else if (t.COL_WIN == 2)
+//            {
+//                for(int i = 0; i < 3; i++)
+//                {
+//                    g.fillRect(x1 + (dimension * 2), y1 + (dimension * i), dimension, dimension);
+//                }
+//            }
         }
 
         // Draw the grid
