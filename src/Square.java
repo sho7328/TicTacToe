@@ -18,7 +18,7 @@ public class Square {
     private int row;
     private int col;
     private boolean isWinningSquare;
-    private TicTacToeViewer t;
+    private TicTacToe t;
 
     /**
      * Constructor to initialize one Square of the
@@ -62,12 +62,26 @@ public class Square {
         return this.marker;
     }
 
-    public void draw(Graphics g, int x, int y, int sideLength)
+    public void draw(Graphics g, int x, int y, int sideLength, TicTacToeViewer t)
     {
+        g.setColor(Color.BLACK);
         g.drawRect(x, y, sideLength, sideLength);
-        if(this.isWinningSquare())
+        if(this.isWinningSquare)
         {
+            g.setColor(Color.GREEN);
+            g.fillRect(x, y, sideLength, sideLength);
+        }
+        if(marker.equals(TicTacToe.X_MARKER))
+        {
+            g.drawImage(t.getImages()[0], x, y, sideLength, sideLength, t);
 
         }
+        if(marker.equals(TicTacToe.O_MARKER))
+        {
+            g.drawImage(t.getImages()[1], x, y, sideLength, sideLength, t);
+        }
+
     }
+
+
 }

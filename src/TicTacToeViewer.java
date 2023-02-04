@@ -37,7 +37,7 @@ public class TicTacToeViewer extends JFrame{
     {
         // Draw the labeled axes
         g.setColor(Color.RED);
-        g.setFont(new Font("Serif", Font.ITALIC + Font.BOLD, 30));
+        g.setFont(new Font("TimesRoman", Font.ITALIC + Font.BOLD, 30));
         int wx = ((WINDOW_WIDTH - BOARD_WIDTH) / 2) + ((BOARD_WIDTH / 3) / 2);
         int wy = ((WINDOW_HEIGHT - BOARD_HEIGHT) / 2) - (((BOARD_HEIGHT / 3) / 2) / 3);
         g.drawString("0", wx, wy);
@@ -59,19 +59,20 @@ public class TicTacToeViewer extends JFrame{
             int x = WINDOW_WIDTH / 3;
             int y = WINDOW_HEIGHT - ((WINDOW_HEIGHT - BOARD_HEIGHT) / 5);
             g.setColor(Color.BLACK);
-            g.setFont(new Font("Serif", Font.BOLD, 80));
-            if (t.getWinner().equals("X"))
+            g.setFont(new Font("TimesRoman", Font.BOLD, 80));
+            if (t.getWinner().equals(t.X_MARKER))
             {
                 g.drawString("X WINS!", x, y);
             }
-            else if(t.getWinner().equals("Y"))
+            else if(t.getWinner().equals(t.O_MARKER))
             {
-                g.drawString("Y WINS!", x, y);
+                g.drawString("O WINS!", x, y);
             }
-            else if (t.getWinner().equals("-"))
+            else if (t.getWinner().equals(t.BLANK))
             {
                 g.drawString("ITS A TIE!", x - (BOARD_WIDTH / 6), y);
             }
+
             // The winning squares should be filled in green
             g.setColor(Color.GREEN);
             if(t.DIAGONAL_RIGHT_WIN == -1)
@@ -142,7 +143,7 @@ public class TicTacToeViewer extends JFrame{
             x1 = (WINDOW_WIDTH - BOARD_WIDTH) / 2;
             for(int j = 0; j < board[0].length; j++)
             {
-                board[i][j].draw(g, x1, y1, dimension);
+                board[i][j].draw(g, x1, y1, dimension, this);
                 x1 += dimension;
             }
             y1 += dimension;
