@@ -35,6 +35,8 @@ public class TicTacToeViewer extends JFrame{
 
     public void paint(Graphics g)
     {
+        super.paint(g);
+
         // Draw the labeled axes
         g.setColor(Color.RED);
         g.setFont(new Font("TimesRoman", Font.ITALIC + Font.BOLD, 30));
@@ -53,25 +55,25 @@ public class TicTacToeViewer extends JFrame{
         int x1 = (WINDOW_WIDTH - BOARD_WIDTH) / 2;
         int y1 = (WINDOW_HEIGHT - BOARD_HEIGHT) / 2;
         int dimension = BOARD_HEIGHT / 3;
-        if (t.getGameOver())
-        {
-            // The winner should be displayed at the bottom of the window
-            int x = WINDOW_WIDTH / 3;
-            int y = WINDOW_HEIGHT - ((WINDOW_HEIGHT - BOARD_HEIGHT) / 5);
-            g.setColor(Color.BLACK);
-            g.setFont(new Font("TimesRoman", Font.BOLD, 80));
-            if (t.getWinner().equals(t.X_MARKER))
-            {
-                g.drawString("X WINS!", x, y);
-            }
-            else if(t.getWinner().equals(t.O_MARKER))
-            {
-                g.drawString("O WINS!", x, y);
-            }
-            else if (t.getWinner().equals(t.BLANK))
-            {
-                g.drawString("ITS A TIE!", x - (BOARD_WIDTH / 6), y);
-            }
+//        if (t.getGameOver())
+//        {
+//            // The winner should be displayed at the bottom of the window
+//            int x = WINDOW_WIDTH / 3;
+//            int y = WINDOW_HEIGHT - ((WINDOW_HEIGHT - BOARD_HEIGHT) / 5);
+//            g.setColor(Color.BLACK);
+//            g.setFont(new Font("TimesRoman", Font.BOLD, 80));
+//            if (t.getWinner().equals(t.X_MARKER))
+//            {
+//                g.drawString("X WINS!", x, y);
+//            }
+//            else if(t.getWinner().equals(t.O_MARKER))
+//            {
+//                g.drawString("O WINS!", x, y);
+//            }
+//            else if (t.getWinner().equals(t.BLANK))
+//            {
+//                g.drawString("ITS A TIE!", x - (BOARD_WIDTH / 6), y);
+//            }
 
 //            // The winning squares should be filled in green
 //            g.setColor(Color.GREEN);
@@ -131,7 +133,7 @@ public class TicTacToeViewer extends JFrame{
 //                    g.fillRect(x1 + (dimension * 2), y1 + (dimension * i), dimension, dimension);
 //                }
 //            }
-        }
+//        }
 
         // Draw the grid
         board = t.getBoard();
@@ -148,6 +150,27 @@ public class TicTacToeViewer extends JFrame{
             }
             y1 += dimension;
         }
+        int x = WINDOW_WIDTH / 3;
+        int y = WINDOW_HEIGHT - ((WINDOW_HEIGHT - BOARD_HEIGHT) / 5);
+        g.setColor(Color.BLACK);
+        g.setFont(new Font("TimesRoman", Font.BOLD, 80));
+        if (t.getGameOver())
+        {
+            // The winner should be displayed at the bottom of the window
+            if (t.getWinner().equals(t.X_MARKER))
+            {
+                g.drawString("X WINS!", x, y);
+            }
+            else if (t.getWinner().equals(t.O_MARKER))
+            {
+                g.drawString("O WINS!", x, y);
+            }
+            else if (t.getWinner().equals(t.BLANK))
+            {
+                g.drawString("ITS A TIE!", x - (BOARD_WIDTH / 6), y);
+            }
+        }
+
     }
 
 }
