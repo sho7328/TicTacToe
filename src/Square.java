@@ -1,6 +1,9 @@
 import javax.swing.*;
 import java.awt.*;
 /**
+ * Sophie Ho
+ * 2/4/23
+ *
  * A class written to support the TicTacToe Game.
  *
  * Each Square object is one position of the TicTacToe
@@ -62,26 +65,28 @@ public class Square {
         return this.marker;
     }
 
+    // This method works in cooperation with the TicTacToeViewer paint method
     public void draw(Graphics g, int x, int y, int sideLength, TicTacToeViewer t)
     {
+        // Set the square color
         g.setColor(Color.BLACK);
+        // Draw a single square at (x,y)
         g.drawRect(x, y, sideLength, sideLength);
+        // If the square is part of a winning sequence, fill it green.
         if(this.isWinningSquare)
         {
             g.setColor(Color.GREEN);
             g.fillRect(x, y, sideLength, sideLength);
         }
+        // If it's X's turn, draw the X at the user's inputted place on the board.
         if(marker.equals(TicTacToe.X_MARKER))
         {
             g.drawImage(t.getImages()[0], x, y, sideLength, sideLength, t);
-
         }
+        // If it's O's turn, draw the O at the user's inputted place on the board.
         if(marker.equals(TicTacToe.O_MARKER))
         {
             g.drawImage(t.getImages()[1], x, y, sideLength, sideLength, t);
         }
-
     }
-
-
 }
