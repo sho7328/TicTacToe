@@ -1,7 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 /**
- * Sophie Ho
+ * SOPHIE HO
  * 2/4/23
  *
  * A class written to support the TicTacToe Game.

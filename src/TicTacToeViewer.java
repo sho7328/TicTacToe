@@ -1,7 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 
-// Sophie Ho
+// SOPHIE HO
 // 2/4/23
 // Front-end of the TicTacToe program
 // Runs the pop-up window's visuals and programming.

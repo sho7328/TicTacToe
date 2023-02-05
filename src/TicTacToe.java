@@ -10,7 +10,7 @@
  * @version: Jan 2023
  */
 
-// Sophie Ho 2/4/23
+// SOPHIE HO 2/4/23
 // Back-end of the TicTacToe project
 // Runs the console of the game.
 
